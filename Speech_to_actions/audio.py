@@ -2,10 +2,12 @@ from vosk import Model, KaldiRecognizer
 import pyaudio
 import json
 import functions
+import os
 
 def start_to_listen():
     
-    model = Model("vosk-model-small-en-in-0.4")
+    model = Model(os.path.dirname(os.path.realpath(__file__))
++"\\vosk-model-small-en-in-0.4")
     recognizer = KaldiRecognizer(model, 16000)
     mic = pyaudio.PyAudio()
     stream = mic.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=1024)

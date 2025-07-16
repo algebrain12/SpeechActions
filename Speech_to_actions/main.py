@@ -31,7 +31,7 @@ class MyApp(App):
         self.title = "Speechactions"
         print("hello")
         second_thread = threading.Thread(target = audio.start_to_listen, daemon=True)
-        #second_thread.start()
+        second_thread.start()
         return MyBox()
 
 if __name__ == "__main__":
